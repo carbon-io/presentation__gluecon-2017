@@ -370,7 +370,7 @@ _o('./HelloEndpoint')
 * [For organizating modules](https://github.com/carbon-io/example__hello-world-service-advanced-mongodb/blob/master/lib/HelloService.js#L57-L58)
 * [For connecting to other services](https://github.com/carbon-io/example__hello-world-service-advanced-chaining/blob/master/lib/PublicHelloService.js#L32) 
 
-### (4.3) Fibers (the ```__``` operator)
+### (4.3) Fibers (the ```__``` operator) (D)
 
 Carbon.io uses [Node Fibers](https://github.com/laverdet/node-fibers) under the hood to manage the complexity 
 of Node.js concurrency. *Have you noticed any callbacks in the example code so far?*
