@@ -511,7 +511,7 @@ Advantages
 
 Disadvantages
 * Can't be used in the browser.
-* Not clear when control flow will yield under the hood (*beware of shared mutable state*).
+* While usually obvious, it is not generally clear when control flow will yield under the hood (*beware of shared mutable state*).
 
 ### (4.3.6) Future work (*no pun intended*)
 * Better integration with Promises
