@@ -519,7 +519,7 @@ Disadvantages
 ## (5) Authentication and access control
 
 * Authentication is about determining who the user is.
-* Access control is about determining what the user has permission to do.
+* Access control is about controlling what the user has permission to do.
 
 ### (5.1) Authentication
 
@@ -530,7 +530,7 @@ To implement an Authenticator you create an instance of the ```Authenticator``` 
 ```node
 o({
   _type: carbon.carbond.security.Authenticator,
-  authenticate: function(req) {
+  authenticate: function(req) { // also supports cb if desired
     var user = figureOutWhoUserIs()
     return user
   }
