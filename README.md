@@ -438,13 +438,15 @@ It should also be noted that you must use fibers in all top-level messages in th
 
 There are two forms of ```.sync```:
 
-```OBJ.sync.METHOD(ARGS)```
+* ```OBJ.sync.METHOD(ARGS)```
+
 **Example**
 ```
 fs.sync.readFile("foo.txt")
 ```
 
-```OBJ.sync.METHOD(ARGS)```
+* ```OBJ.METHOD.sync(ARGS)```
+
 **Example**
 ```
 fs.sync.readFile("foo.txt")
