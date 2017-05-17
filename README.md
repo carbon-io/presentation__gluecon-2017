@@ -20,7 +20,7 @@
 * Seamless integration with MongoDB (although one can use other dbs as well).
 * Make control flow a non-issue (a.k.a. avoid callback hell).
 * Easy authentication and access control.
-* Easy to communicate with other microservices (and therefore easy to build distributed systems).
+* Easy to communicate with other microservices (and therefore easier to build distributed systems).
 * Easy to document.
 * Easy to test.
 
