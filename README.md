@@ -449,8 +449,10 @@ fs.sync.readFile("foo.txt")
 
 Example
 ```
-fs.sync.readFile("foo.txt")
+fs.readFile.sync("foo.txt")
 ```
+
+Best practice: The first form should be used if there is a receiver, and the second on plain functions. 
 
 #### (4.3.3) ```__.ensure``` vs ```__.spawn```
 
@@ -467,7 +469,7 @@ standalone.
 
 ```node
 var carbon = require('carbon-io')
-var __     = carbon.fibers.__(module)
+var __     = carbon.fibers.__(module) // default behavior is that of __.ensure
 var o      = carbon.atom.o(module).main
 
 __(function() {
@@ -484,10 +486,13 @@ __(function() {
 })
 ```
 
-### (4.4) Revisiting our examples
+### (4.3.4) Revisiting our examples
 
-* Revisit advanced mongodb
-* Revisit chaining
+* [Hello world (mongodb)](https://github.com/carbon-io/example__hello-world-service-advanced-mongodb)
+* [Hello world (chaining)](https://github.com/carbon-io/example__hello-world-service-advanced-chaining)
+
+### (4.3.5) Future work (*no pun intended*)
+* Better integration with Promises
 
 ## (5) Authentication and access control
 
