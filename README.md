@@ -506,7 +506,7 @@ __(function() {
 Advantages
 * Very natural control flow model.
 * Exceptions and stack traces.
-* Makes Node.js more functional. *Wait what? Not passing functions as callbacks more functional?*
+* Makes Node.js more functional. *Wait what? Not passing functions as callbacks is more functional?*
   * A pillar of functional programming is that expressions evaluate to values.
 
 Disadvantages
