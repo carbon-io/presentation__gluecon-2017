@@ -501,6 +501,18 @@ __(function() {
 * [Hello world (mongodb)](https://github.com/carbon-io/example__hello-world-service-advanced-mongodb/blob/master/lib/HelloEndpoint.js#L50)
 * [Hello world (chaining)](https://github.com/carbon-io/example__hello-world-service-advanced-chaining/blob/master/lib/PublicHelloService.js#L58)
 
+### (4.3.6) Advantages and disadvantages
+
+Advantages
+* Very natural control flow model.
+* Exceptions and stack traces.
+* Makes Node.js more functional. *Wait what? Not passing functions as callbacks more functional?*
+  * A pillar of functional programming is that expressions evaluate to values 
+
+Disadvantages
+* Can't be used in the browser.
+* Not clear when control flow will yield under the hood (*beware of shared mutable state*).
+
 ### (4.3.6) Future work (*no pun intended*)
 * Better integration with Promises
 
