@@ -438,8 +438,17 @@ It should also be noted that you must use fibers in all top-level messages in th
 
 There are two forms of ```.sync```:
 
-* *OBJ*.sync.*METHOD*(ARG_0, ...)
-* *OBJ*.*METHOD*.sync(ARG_0, ...)
+```OBJ.sync.METHOD(ARGS)```
+**Example**
+```
+fs.sync.readFile("foo.txt")
+```
+
+```OBJ.sync.METHOD(ARGS)```
+**Example**
+```
+fs.sync.readFile("foo.txt")
+```
 
 #### (4.3.3) ```__.ensure``` vs ```__.spawn```
 
@@ -476,7 +485,7 @@ __(function() {
 ### (4.4) Revisiting our examples
 
 * Revisit advanced mongodb
-* Revisit chainging
+* Revisit chaining
 
 ## (5) Authentication and access control
 
