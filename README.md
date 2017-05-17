@@ -441,25 +441,35 @@ There are two forms of ```.sync```:
 * ```OBJ.sync.METHOD(ARGS)```
 
 Example
-```
+```node
 fs.sync.readFile("foo.txt")
 ```
 
 * ```OBJ.METHOD.sync(ARGS)```
 
 Example
-```
+```node
 fs.readFile.sync("foo.txt")
 ```
 
 Best practice: The first form should be used if there is a receiver, and the second on plain functions. 
 
-#### (4.3.3) ```__.ensure``` vs ```__.spawn```
+#### (4.3.3) Creating synchronous wrappers
+
+You can use ```.sync``` to make user-friendly synchronous wrappers:
+
+```node
+function readFile(path) {
+  return fs.readfile.sync(path)
+}
+```
+
+#### (4.3.4) ```__.ensure``` vs ```__.spawn```
 
 There are two variants of the ```___``` operator, ```ensure``` and ```spawn```.
 
-* ```__.ensure```: Only spawns a new fiber if not already executing within a fiber (**default**)
-* ```__.spawn```: Always spawns a new fiber
+* ```__.ensure```: Only spawns a new fiber if not already executing within a fiber (**default**).
+* ```__.spawn```: Always spawns a new fiber.
 
 Using ```__.ensure``` is particularly useful as top-level wrappers for applications that you also want to be able 
 to use as components / libraries.
@@ -486,12 +496,12 @@ __(function() {
 })
 ```
 
-### (4.3.4) Revisiting our examples
+### (4.3.5) Revisiting our examples
 
-* [Hello world (mongodb)](https://github.com/carbon-io/example__hello-world-service-advanced-mongodb)
-* [Hello world (chaining)](https://github.com/carbon-io/example__hello-world-service-advanced-chaining)
+* [Hello world (mongodb)](https://github.com/carbon-io/example__hello-world-service-advanced-mongodb/blob/master/lib/HelloEndpoint.js#L50)
+* [Hello world (chaining)](https://github.com/carbon-io/example__hello-world-service-advanced-chaining/blob/master/lib/PublicHelloService.js#L58)
 
-### (4.3.5) Future work (*no pun intended*)
+### (4.3.6) Future work (*no pun intended*)
 * Better integration with Promises
 
 ## (5) Authentication and access control
