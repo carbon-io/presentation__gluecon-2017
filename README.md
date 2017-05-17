@@ -375,10 +375,10 @@ _o('./HelloEndpoint')
 Carbon.io uses [Node Fibers](https://github.com/laverdet/node-fibers) under the hood to manage the complexity 
 of Node.js concurrency. *Have you noticed any callbacks in the example code so far?*
 
-Consider the following:
+Fibers allow you to write code that is *logically* synchronous. Consider the following code snippet:
 
 ```node
-fs.readFile(path, function(err, data) {
+fs.readFile("foo.txt", function(err, data) {
   if (err) {
     console.log(err)
   } else {
@@ -392,13 +392,16 @@ With Fibers you can do this:
 ```node
 __(function() {
   try {
-    var data = fs.readFile.sync(path) // control flow is yielded
+    var data = fs.readFile.sync("foo.txt") // control flow is yielded
     console.log(data)
   } catch (err) {
     console.log(err)
   } 
 })
 ```
+
+* The ```readFile``` function blocks the fiber (yields) until data is returned.
+* If an error occurs it is thown as an exception (with a useful stacktrace). This is huge. 
 
 #### (4.3.1) ```__```
 
@@ -407,6 +410,7 @@ The ```___``` operator is what spawns new fibers.
 ```node
 __(function() {
   // Code that runs in fiber
+  // Code in the context of the fiber may use .sync()
 })
 ```
 
@@ -424,6 +428,11 @@ __(function() {
 * Code inside of a spwaned fiber runs asynchronous to the code that spawned the fiber
 * If callback is supplied return value from function (or exception if thrown) is passed to callback. 
 * From within the fiber ```.sync``` can be called to synchronously call functions (without *actually* blocking). 
+
+It should also be noted that you must use fibers in all top-level messages in the event loop. Examples:
+* The main program
+* Asycnronous functions (e.g. ```process.nextTick(function() { ... })```)
+* In HTTP middleware to wrap the processing of an HTTP Request
 
 #### (4.3.2) ```.sync```
 
