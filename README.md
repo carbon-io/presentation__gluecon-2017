@@ -440,14 +440,14 @@ There are two forms of ```.sync```:
 
 * ```OBJ.sync.METHOD(ARGS)```
 
-**Example**
+Example
 ```
 fs.sync.readFile("foo.txt")
 ```
 
 * ```OBJ.METHOD.sync(ARGS)```
 
-**Example**
+Example
 ```
 fs.sync.readFile("foo.txt")
 ```
