@@ -11,7 +11,7 @@
 ## (1) What is carbon.io? (D)
 
 * A Node.js framework for building commandline programs, microservices, and APIs.
-* It is a framework, build on a set of core libraries.
+* It is a framework, built on a set of core libraries.
 * It is opinionated.
 
 ## (2) Design goals (D)
@@ -188,8 +188,7 @@ The following sections will explain the purpose of:
 
 ### (4.1) Atom (the ```o``` operator) (D)
 
-Atom is the universal object factory, and used to instantiate objects and to create *components*. Components are simply objects bound 
-in the Node.js module namespace via ```module.exports```.
+Atom is the universal object factory, and used to instantiate objects and to create *components*. Components are simply objects bound in the Node.js module namespace via ```module.exports```.
 
 The easiest way to think about Atom is that it allows you create object literals that also define a *class binding*. 
 
@@ -248,8 +247,7 @@ o({
 
 #### (4.1.2) Dynamic properties
 
-JavaScript allows for dynamics properties (via getters and setters) to be defined on objects via ```Object.defineProperty```. Atom 
-has a shorthand for this via the ```$property``` keyword:
+JavaScript allows for dynamic properties (via getters and setters) to be defined on objects via ```Object.defineProperty```. Atom has a shorthand for this via the ```$property``` keyword:
 
 ```node
 o({
@@ -323,7 +321,7 @@ __(function() {
 * Special variant of the ```o``` operator.
 * Calls ```_main``` iff ```require.main === module``` (i.e. the module is called as the main module). 
 * This allows us to create modules that can act both as applications *and* libraries (subtle point -- pretty cool).
-   * We will see example of this with the test framework
+   * We will see an example of this with the test framework
 
 #### (4.1.5) Advantages of using Atom:
 
@@ -354,7 +352,7 @@ _o('http:localhost:8888').get().body
 _o('http:localhost:8888').getEndpoint('hello').post({ msg: "Hello world!" })
 ```
 
-#### (4.2.3) Connecting to mongodb via a MongoDB URI
+#### (4.2.3) Connecting to MongoDB via a MongoDB URI
 ```node
 var mydb = _o('mongodb://localhost:27017/mydb')
 mydb.getCollection("users").insert({email: "joe@acme.com"))
@@ -367,7 +365,7 @@ _o('./HelloEndpoint')
 
 #### In previous examples:
 * [For environment variables](https://github.com/carbon-io/example__hello-world-service-advanced-mongodb/blob/master/lib/HelloService.js#L51)
-* [For organizating modules](https://github.com/carbon-io/example__hello-world-service-advanced-mongodb/blob/master/lib/HelloService.js#L57-L58)
+* [For organizing modules](https://github.com/carbon-io/example__hello-world-service-advanced-mongodb/blob/master/lib/HelloService.js#L57-L58)
 * [For connecting to other services](https://github.com/carbon-io/example__hello-world-service-advanced-chaining/blob/master/lib/PublicHelloService.js#L32) 
 
 ### (4.3) Fibers (the ```__``` operator) (D)
@@ -414,7 +412,7 @@ __(function() {
 })
 ```
 
-you can also optionaly supply a callback:
+you can also optionally supply a callback:
 
 ```node
 __(function() {
@@ -426,7 +424,7 @@ __(function() {
 
 **Behavior**
 * Code inside of a spwaned fiber runs asynchronous to the code that spawned the fiber
-* If callback is supplied return value from function (or exception if thrown) is passed to callback. 
+* If a callback is supplied, the return value from the function (or exception if thrown) is passed to the callback. 
 * From within the fiber ```.sync``` can be called to synchronously call functions (without *actually* blocking). 
 
 It should also be noted that you must use fibers in all top-level messages in the event loop. Examples:
