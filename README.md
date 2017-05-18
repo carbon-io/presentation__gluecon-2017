@@ -220,7 +220,17 @@ o({
 })
 ```
 
-where ```Rectangle``` and ```Point``` are JavaScript classes with methods you can then invoke on these objects. 
+where ```Rectangle``` and ```Point``` are JavaScript classes with methods you can then invoke on these objects. For example:
+
+```node
+var r = o({
+  _type: Rectangle,
+  point1: o({ _type: Point, x: 1, y: 2 })
+  point2: o({ _type: Point, x: 5, y: 7 })
+})
+
+r.scaleByFactor(10)
+```
 
 #### (4.1.1) The object lifecycle and ```_init```
 
