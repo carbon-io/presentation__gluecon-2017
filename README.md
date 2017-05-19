@@ -3,8 +3,8 @@
 ## (0) Hello (D)
 
 * I'm Will Shulman, CEO and Co-founder of mLab.
-* Database-as-a-Service for MongoDB.
-* mLab hosts more than half a million MongoDB deployments.
+* Database-as-a-Service for MongoDB that runs on AWS, Azure, and Google Cloud.
+* We host more than half a million MongoDB deployments.
 * Our infrastructure is large and complex, and is made up of dozens of types of microservices.
 * We built carbon.io to allow us to quickly build high-quality microservices.
 
@@ -12,7 +12,7 @@
 
 * A Node.js framework for building commandline programs, microservices, and APIs.
 * It is a framework, built on a set of core libraries.
-* It is opinionated.
+* It is opinionated *(but also friendly)*.
 
 ## (2) Design goals (D)
 
@@ -703,6 +703,33 @@ __(function() {
 
 Let's look at a more elaborate example:
 * [Zipcode service]( https://github.com/carbon-io/example__zipcode-service)
+
+### (6.3) Custom Collections
+
+You can create custom collections that implement the ```Collection``` interface however you like:
+
+```node
+__(function() {
+  module.exports = o({
+    _type: carbon.carbond.Service,
+    port: 8888,
+    dbUri: "mongodb://localhost:27017/mydb",
+    endpoints: {
+      feedback: o({
+        _type: carbon.carbond.collections.Collection,
+        // POST /feedback
+        insert: function(obj) {
+          obj.ts = new Date()
+          this.getService().db.getCollection("feedback").insert(obj)
+        },
+      })
+    }
+  })
+})
+```
+
+Let's look at a more elaborate example:
+* [Contacts service](https://github.com/carbon-io/example__contacts-api)
 
 ## (7) Testing with Test-tube
 
