@@ -809,13 +809,16 @@ __(function() {
 ## (8) Generating API documentation for your Services
 (do we show docgen throughout?)
 
-## (9) Questions?
+## (9) Should I use carbon.io in production?
 
-## (10) Additional Resources
+## (10) Questions?
+
+
+## (11) Additional Resources
 
 * http://docs.carbon.io
-* http://github.com/carbon-io/carbon-io
 * https://www.npmjs.com/package/carbon-io
+* http://github.com/carbon-io/carbon-io
 * will@mlab.com
 
 
