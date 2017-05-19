@@ -519,7 +519,6 @@ Advantages
 
 Disadvantages
 * Can't be used in the browser.
-* Slight performance hit (~15%)
 * While usually obvious, it is not generally clear when control flow will yield under the hood (*beware of shared mutable state*).
 
 ### (4.3.6) Future work (*no pun intended*)
