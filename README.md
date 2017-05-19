@@ -761,7 +761,7 @@ __(function() {
 })
 ```
 
-Tests can be synchronous or asynchronous. 
+Test implementations (as well as ```setup``` and ```teardown```) can be synchronous or asynchronous. 
 
 Synchronous
 ```node
@@ -809,7 +809,7 @@ it easy to manage large test suites.
 
 ```node
 var __ = require('@carbon-io/carbon-core').fibers.__(module)
-var o = require('@carbon-io/carbon-core').atom.o(module).main // Since this is main
+var o = require('@carbon-io/carbon-core').atom.o(module).main // Since this can run as main
 var _o = require('@carbon-io/carbon-core').bond._o(module)
 var testtube = require('@carbon-io/carbon-core').testtube
 
@@ -826,6 +826,67 @@ __(function() {
   })
 })
 ```
+
+* Test trees can be arbitrarily deep.
+* Any test node in the tree can be run individually.
+
+### (7.3) HttpTests
+
+Test-tube makes it particularly easy to write HTTP-based tests. 
+
+```node
+__(function() {
+  module.exports = o({
+    _type: testtube.HttpTest,
+    name: "HttpTests",
+    description: "Http tests",
+    baseUrl: "http://localhost:8888",
+    tests: [
+      {
+        reqSpec: {
+          url: "/hello",
+          method: 'GET'
+        },
+        resSpec: {
+          statusCode: 200,
+          body: "Hello world!"
+        }
+      },
+    ]
+  })
+})
+```
+
+### (7.4) ServiceTests
+
+The ```ServiceTest``` class is an extension of ```HttpTest``` that makes it easy to have the test start and stop your ```Service``` 
+as part of the test process. 
+
+```node
+__(function() {
+  module.exports = o({
+    _type: carbon.carbond.test.ServiceTest,
+    name: "HttpTests",
+    description: "Http tests",
+    service: _o('./MyService'),
+    tests: [
+      {
+        reqSpec: {
+          url: "/hello",
+          method: 'GET'
+        },
+        resSpec: {
+          statusCode: 200,
+          body: "Hello world!"
+        }
+      },
+    ]
+  })
+})
+```
+
+### (7.4) Running tests
+
 
 ## (8) Generating API documentation for your Services
 (do we show docgen throughout?)
