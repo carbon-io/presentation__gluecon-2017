@@ -885,6 +885,11 @@ __(function() {
 })
 ```
 
+This test will:
+1. Start ```HelloService```.
+1. Run the HTTP tests defined in ```tests```.
+1. Stop ```HelloService```.
+
 ### (7.4) Running tests
 
 
