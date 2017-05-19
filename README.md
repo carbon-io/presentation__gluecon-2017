@@ -754,7 +754,7 @@ __(function() {
     setup: function(context, done) {},    // optional
     teardown: function(context, done) {}, // optional
     tests: [],                            // sub-tests (optional)
-    doTest: function(context, done) {     // optional as well although usually you implement this or have sub-tests
+    doTest: function(context, done) {     // optional as well - usually you implement this or have sub-tests
        // test implementation
     }
   })
@@ -802,7 +802,9 @@ __(function() {
 })
 ```
 
-### (7.1) Basic test structure
+### (7.2) Test suites
+
+
 
 ## (8) Generating API documentation for your Services
 (do we show docgen throughout?)
