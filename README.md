@@ -645,19 +645,28 @@ o({
 Collections are an abstraction on top of ```Endpoints```s that provide a higher-level interface for implemeting
 access to a collection of resources. 
 
-Example:
+Common use case:
 ```
-GET /users    // Get all Users
-POST /users   // Add a User
-.
-.
-.
+GET /users         // Get all Users
+POST /users        // Add a User
 GET /users/123     // Get User with _id of 123
+PUT /users/123     // Modify User with _id of 123
 DELETE /users/123  // Remove User with _id of 123
-.
-.
-.
 ```
+
+### (6.1) The Collection interface
+
+When implementing a ```Collection```, instead of implementing the low-level HTTP methods 
+(```get```, ```post```, ```delete```, etc...), you implement the following higher-level interface:
+
+* ```insert(obj, reqCtx)```
+* ```find(query, reqCtx)```
+* ```update(query, update, reqCtx)```
+* ```remove(query, reqCtx)```
+* ```saveObject(obj, reqCtx)```
+* ```findObject(id, reqCtx)```
+* ```updateObject(id, update, reqCtx)```
+* ```removeObject(id, reqCtx)```
 
 ## (7) Testing with Test-tube
 
