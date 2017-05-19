@@ -640,7 +640,7 @@ o({
 * [Hello world AAC example](https://github.com/carbon-io/example__hello-world-service-advanced-aac)
 
 
-## (6) Collections
+## (6) Collections (D)
 
 Collections are an abstraction on top of ```Endpoints```s that provide a higher-level interface for implemeting
 access to a collection of resources. 
@@ -753,7 +753,8 @@ __(function() {
     description: 'A simple test example.',
     setup: function(context, done) {},    // optional
     teardown: function(context, done) {}, // optional
-    doTest: function(context, done) {
+    tests: [],                            // sub-tests (optional)
+    doTest: function(context, done) {     // optional as well although usually you implement this or have sub-tests
        // test implementation
     }
   })
@@ -784,16 +785,24 @@ __(function() {
     name: 'ExampleTest',
     description: 'A simple test example.',
     doTest: function(context, done) {
-       try {
-         assert(1 == 1)
-       } catch (e) {
-         done(e)
-       }
-       done()
-    }
+      someAsyncFunction(function(err, value) {
+        if (err) {
+          done(e)
+        } else {
+          try {
+            assert(value == 0)
+          } catch (e) {
+            done(e)
+          }
+          done()
+        }
+      })
+    })
   })
 })
 ```
+
+### (7.1) Basic test structure
 
 ## (8) Generating API documentation for your Services
 (do we show docgen throughout?)
