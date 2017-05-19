@@ -670,7 +670,7 @@ When implementing a ```Collection```, instead of implementing the low-level HTTP
 
 Which results in the following tree of ```Endpoint```s and ```Operation```s:
 
-* ```/<collection>```
+* ```/<collection>/```
    * ```POST``` which maps to ```insert```
    * ```GET``` which maps to ```find```
    * ```PATCH``` which maps to ```update```
@@ -680,6 +680,29 @@ Which results in the following tree of ```Endpoint```s and ```Operation```s:
    * ```GET``` which maps to ```findObject```
    * ```PATCH``` which maps to ```updateObject```
    * ```DELETE``` which maps to ```removeObject```
+
+### (6.2) MongoDBCollection
+
+The ```MongoDBCollection``` class is a ```Collection``` that is backed by a MongoDB database collection. 
+
+```node
+__(function() {
+  module.exports = o({
+    _type: carbon.carbond.Service,
+    port: 8888,
+    dbUri: 'mongodb://localhost:27017/mydb',
+    endpoints: {
+      messages: o({
+        _type: carbon.carbond.mongodb.MongoDBCollection,
+        collection: 'messages'
+      })
+    }
+  })
+})
+```
+
+Lets' look at a more elaborate example:
+* [Zipcode service]( https://github.com/carbon-io/example__zipcode-service)
 
 ## (7) Testing with Test-tube
 
