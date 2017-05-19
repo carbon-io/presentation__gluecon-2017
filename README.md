@@ -668,6 +668,19 @@ When implementing a ```Collection```, instead of implementing the low-level HTTP
 * ```updateObject(id, update, reqCtx)```
 * ```removeObject(id, reqCtx)```
 
+Which results in the following tree of ```Endpoint```s and ```Operation```s:
+
+* ```/<collection>```
+   * ```POST``` which maps to ```insert```
+   * ```GET``` which maps to ```find```
+   * ```PATCH``` which maps to ```update```
+   * ```DELETE``` which maps to ```remove```
+* ```/<collection>/:_id```
+   * ```PUT``` which maps to ```saveObject```
+   * ```GET``` which maps to ```findObject```
+   * ```PATCH``` which maps to ```updateObject```
+   * ```DELETE``` which maps to ```removeObject```
+
 ## (7) Testing with Test-tube
 
 Carbon.io comes with a testing library called Test-tube. 
