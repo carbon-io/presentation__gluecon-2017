@@ -642,7 +642,22 @@ o({
 
 ## (6) Collections
 
+Collections are an abstraction on top of ```Endpoints```s that provide a higher-level interface for implemeting
+access to a collection of resources. 
 
+Example:
+```
+GET /users    // Get all Users
+POST /users   // Add a User
+.
+.
+.
+GET /users/123     // Get User with _id of 123
+DELETE /users/123  // Remove User with _id of 123
+.
+.
+.
+```
 
 ## (7) Testing with Test-tube
 
