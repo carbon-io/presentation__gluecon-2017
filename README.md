@@ -804,7 +804,28 @@ __(function() {
 
 ### (7.2) Test suites
 
+Since all ```Test``` objects can have an array of child / sub-tests, Tests are trees. This makes
+it easy to manage large test suites.
 
+```node
+var __ = require('@carbon-io/carbon-core').fibers.__(module)
+var o = require('@carbon-io/carbon-core').atom.o(module).main // Since this is main
+var _o = require('@carbon-io/carbon-core').bond._o(module)
+var testtube = require('@carbon-io/carbon-core').testtube
+
+__(function() {
+  module.exports = o({
+    _type: testtube.Test,
+    name: "Math test suite",
+    tests: [
+      _o('./AdditionTests'),
+      _o('./SubtractionTests'),
+      _o('./MultiplicationTests'),
+      _o('./DivisionTests')
+    ],
+  })
+})
+```
 
 ## (8) Generating API documentation for your Services
 (do we show docgen throughout?)
