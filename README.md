@@ -868,7 +868,7 @@ __(function() {
     _type: carbon.carbond.test.ServiceTest,
     name: "HttpTests",
     description: "Http tests",
-    service: _o('./MyService'),
+    service: _o('./HelloService'),
     tests: [
       {
         reqSpec: {
