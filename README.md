@@ -524,7 +524,7 @@ Disadvantages
 ### (4.3.6) Future work (*no pun intended*)
 * Better integration with Promises
 
-## (5) Authentication and access control
+## (5) Authentication and access control (D)
 
 * Authentication is about determining who the user is.
 * Access control is about controlling what the user has permission to do.
@@ -642,7 +642,7 @@ o({
 
 ## (6) Collections
 
-*is this where we show Contacts API?*
+
 
 ## (7) Testing with Test-tube
 
