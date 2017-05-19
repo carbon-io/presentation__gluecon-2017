@@ -701,7 +701,7 @@ __(function() {
 })
 ```
 
-Lets' look at a more elaborate example:
+Let's look at a more elaborate example:
 * [Zipcode service]( https://github.com/carbon-io/example__zipcode-service)
 
 ## (7) Testing with Test-tube
