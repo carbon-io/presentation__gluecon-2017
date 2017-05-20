@@ -892,6 +892,9 @@ This test will:
 
 ### (7.4) Running tests
 
+```shell
+% node test/HelloServiceTests
+```
 
 ## (8) Generating API documentation for your Services
 (do we show docgen throughout?)
