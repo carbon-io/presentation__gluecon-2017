@@ -897,7 +897,25 @@ $ node test/HelloServiceTest
 ```
 
 ## (8) Generating API documentation for your Services
-(do we show docgen throughout?)
+
+```shell
+$ node lib/HelloService.js gen-static-docs -h
+
+Usage: /usr/local/bin/node HelloService.js gen-static-docs [options]
+
+Options:
+   -v VERBOSITY, --verbosity VERBOSITY   verbosity level (trace | debug | info | warn | error | fatal)
+   --flavor FLAVOR                       choose your flavor (github-flavored-markdown | api-blueprint | aglio)  [github-flavored-markdown]
+   --out PATH                            path to write static docs to (directory for multiple pages (default: api-docs) and file for single page (default: README.md))
+   -o OPTION, --option OPTION            set generator specific options (format is: option[:value](,option[:value])*, can be specified multiple times)
+   --show-options                        show generator specific options
+
+generate docs for the api
+Environment variables: 
+  <none>
+
+```
+
 
 ## (9) Should I use carbon.io in production?
 
