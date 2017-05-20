@@ -898,6 +898,13 @@ $ node test/HelloServiceTest
 
 ## (8) Generating API documentation for your Services
 
+Each ```Service``` is capable of generating its own docs. 
+
+Flavors:
+* Github Flavored Markdown
+* Static HTML [using aglio](https://github.com/danielgtaylor/aglio)
+* *can write your own generator*
+
 ```shell
 $ node lib/HelloService.js gen-static-docs -h
 
