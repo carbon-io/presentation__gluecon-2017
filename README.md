@@ -143,7 +143,7 @@ __(function() {
 
 * Part of carbon.io
 * Wrapper around standard Node.js MongoDB driver
-* Supports synchronous call style XXX
+* Supports both asynchronous and synchronous calling styles
 
 #### (3.4.3) Putting it all together
 
