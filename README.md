@@ -68,7 +68,7 @@ Service
 
 * Let's take a look at a real example: [Hello world example](https://github.com/carbon-io/example__hello-world-service)
 
-### (3.3) Parameter parsing and input / output validation, and error handling (D)
+### (3.3) Defining parameters and responses (D)
 
 Operations can be decorated with structure that allows the system to automatically handle certain aspects of managing
 inputs and outputs, and makes the API self-describing. 
@@ -79,7 +79,7 @@ inputs and outputs, and makes the API self-describing.
 * This is useful for:
   * Automatic validation of input parameters and response output
   * Generating API documentation
-* Let's take a look: [Hello world (advanced) example](https://github.com/carbon-io/example__hello-world-service-advanced).
+* Let's take a look: [Hello world (parameter parsing) example](https://github.com/carbon-io/example__hello-world-service-parameter-parsing).
 
 ### (3.4) Working with MongoDB (D)
 
