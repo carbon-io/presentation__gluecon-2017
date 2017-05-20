@@ -903,7 +903,7 @@ Each ```Service``` is capable of generating its own docs.
 Flavors:
 * Github Flavored Markdown
 * Static HTML [using aglio](https://github.com/danielgtaylor/aglio)
-* *can write your own generator*
+* *We will be adding plug-in model*
 
 ```shell
 $ node lib/HelloService.js gen-static-docs -h
@@ -912,7 +912,7 @@ Usage: /usr/local/bin/node HelloService.js gen-static-docs [options]
 
 Options:
    -v VERBOSITY, --verbosity VERBOSITY   verbosity level (trace | debug | info | warn | error | fatal)
-   --flavor FLAVOR                       choose your flavor (github-flavored-markdown | api-blueprint | aglio)  [github-flavored-markdown]
+   --flavor FLAVOR                       choose your flavor (github-flavored-markdown | aglio)  [github-flavored-markdown]
    --out PATH                            path to write static docs to (directory for multiple pages (default: api-docs) and file for single page (default: README.md))
    -o OPTION, --option OPTION            set generator specific options (format is: option[:value](,option[:value])*, can be specified multiple times)
    --show-options                        show generator specific options
@@ -922,7 +922,10 @@ Environment variables:
   <none>
 
 ```
-
+*Example*
+```shell
+$ node lib/HelloService.js gen-static-docs --flavor aglio --out api.html
+```
 
 ## (9) Should I use carbon.io in production?
 
