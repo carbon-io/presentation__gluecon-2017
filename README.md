@@ -922,10 +922,13 @@ Environment variables:
   <none>
 
 ```
-*Example*
+
+Example
 ```shell
 $ node lib/HelloService.js gen-static-docs --flavor aglio --out api.html
 ```
+
+* [Example output](https://github.com/carbon-io/example__contacts-api/)
 
 ## (9) Should I use carbon.io in production?
 
