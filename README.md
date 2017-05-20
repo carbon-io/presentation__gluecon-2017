@@ -1,4 +1,4 @@
-# Gluecon, May 24th 2017, Boulder CO
+# Gluecon, 2017.05.24, Boulder CO
 
 ## (0) Hello (D)
 
