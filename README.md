@@ -731,7 +731,7 @@ __(function() {
 ```
 
 Let's look at a more elaborate example:
-* [Contacts service](https://github.com/carbon-io/example__contacts-api)
+* [Contact service](https://github.com/carbon-io/example__contact-service)
 
 ## (7) Testing with Test-tube
 
