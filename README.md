@@ -156,7 +156,7 @@ Let's take a look at a real example that uses MongoDB and that illustrates a few
 
 Carbon.io makes it very easy to write services that talk to other services.
 
-* Let's  take a look: [Hello world (chaining)](https://github.com/carbon-io/example__hello-world-service-advanced-chaining)
+* Let's  take a look: [Hello world (chaining)](https://github.com/carbon-io/example__hello-world-service-chaining)
 
 ## (4) A step back: understanding Carbon's core operators (```o```, ```_o```, and ```__```)
 
@@ -325,6 +325,8 @@ __(function() {
 ```
 
 * Note how we use ```o.main```. 
+
+[Let's see it in action](https://github.com/carbon-io/example__simple-cmdline-app)
 
 #### (4.1.4) ```o.main```
 
