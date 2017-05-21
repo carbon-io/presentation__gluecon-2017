@@ -508,8 +508,8 @@ __(function() {
 
 ### (4.3.5) Revisiting our examples
 
-* [Hello world (mongodb)](https://github.com/carbon-io/example__hello-world-service-advanced-mongodb/blob/master/lib/HelloEndpoint.js#L50)
-* [Hello world (chaining)](https://github.com/carbon-io/example__hello-world-service-advanced-chaining/blob/master/lib/PublicHelloService.js#L58)
+* [Hello world (mongodb)](https://github.com/carbon-io/example__hello-world-service-mongodb/blob/master/lib/HelloEndpoint.js#L50)
+* [Hello world (chaining)](https://github.com/carbon-io/example__hello-world-service-chaining/blob/master/lib/PublicHelloService.js#L58)
 
 ### (4.3.6) Advantages and disadvantages
 
@@ -639,7 +639,7 @@ o({
 ```
 
 ### (5.2) Putting it all together
-* [Hello world AAC example](https://github.com/carbon-io/example__hello-world-service-advanced-aac)
+* [Hello world AAC example](https://github.com/carbon-io/example__hello-world-service-aac)
 
 
 ## (6) Collections (D)
