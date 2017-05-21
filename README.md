@@ -149,7 +149,7 @@ __(function() {
 
 Let's take a look at a real example that uses MongoDB and that illustrates a few other advanced features:
 
-* [Hello world (mongodb)](https://github.com/carbon-io/example__hello-world-service-advanced-mongodb)
+* [Hello world (mongodb)](https://github.com/carbon-io/example__hello-world-service-mongodb)
 
 
 ### (3.5) Working with other services (D)
