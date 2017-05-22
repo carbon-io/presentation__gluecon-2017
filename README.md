@@ -1,6 +1,6 @@
 # Gluecon, 2017.05.24, Boulder CO
 
-## (0) Hello (D)
+## (0) Hello
 
 * I'm Will Shulman, CEO and Co-founder of mLab.
 * Database-as-a-Service for MongoDB that runs on AWS, Azure, and Google Cloud.
@@ -8,13 +8,13 @@
 * Our infrastructure is large and complex, and is made up of dozens of types of microservices.
 * We built carbon.io to allow us to quickly build high-quality microservices.
 
-## (1) What is carbon.io? (D)
+## (1) What is carbon.io?
 
 * A Node.js framework for building commandline programs, microservices, and APIs.
 * It is a framework, built on a set of core libraries.
 * It is opinionated *(but also friendly)*.
 
-## (2) Design goals (D)
+## (2) Design goals
 
 * Reduce boilerplate code and make it clear how to do the basics (e.g how to structure your application, define endpoints, validate parameters, etc...).
 * Seamless integration with MongoDB (although one can use other dbs as well).
@@ -26,7 +26,7 @@
 
 ## (3) The Basics
 
-### (3.1) Package structure (D)
+### (3.1) Package structure
 
 ``` 
 <root>
@@ -42,7 +42,7 @@
   |- docs/
 ```
 
-### (3.2) Services, Endpoints, and Operations (D)
+### (3.2) Services, Endpoints, and Operations
 
 * A Service is a tree of Endpoints
 * Endpoints are a set of Operations (GET, PUT, POST, DELETE, etc...)
@@ -68,7 +68,7 @@ Service
 
 * Let's take a look at a real example: [Hello world example](https://github.com/carbon-io/example__hello-world-service)
 
-### (3.3) Defining parameters and responses (D)
+### (3.3) Defining parameters and responses
 
 Operations can be decorated with structure that allows the system to automatically handle certain aspects of managing
 inputs and outputs, and makes the API self-describing. 
@@ -81,7 +81,7 @@ inputs and outputs, and makes the API self-describing.
   * Generating API documentation
 * Let's take a look: [Hello world (parameter parsing) example](https://github.com/carbon-io/example__hello-world-service-parameter-parsing).
 
-### (3.4) Working with MongoDB (D)
+### (3.4) Working with MongoDB
 
 While one can use Carbon.io with any database technology, Carbon.io makes it particularly easy to work with MongoDB.
 
@@ -152,7 +152,7 @@ Let's take a look at a real example that uses MongoDB and that illustrates a few
 * [Hello world (mongodb)](https://github.com/carbon-io/example__hello-world-service-mongodb)
 
 
-### (3.5) Working with other services (D)
+### (3.5) Working with other services
 
 Carbon.io makes it very easy to write services that talk to other services.
 
@@ -186,7 +186,7 @@ The following sections will explain the purpose of:
 * ```_o```: the universal name resolver.
 * ```__```: light-weight Node.js "threads" called *Fibers*.
 
-### (4.1) Atom (the ```o``` operator) (D)
+### (4.1) Atom (the ```o``` operator)
 
 Atom is the universal object factory, and used to instantiate objects and to create *components*. Components are simply objects bound in the Node.js module namespace via ```module.exports```.
 
@@ -341,7 +341,7 @@ __(function() {
 * Provides for a generic form of application configuration.
 * Declarative style ("what not how") via  "datastructure DSLs".
 
-### (4.2) Bond (the ```_o``` operator) (D)
+### (4.2) Bond (the ```_o``` operator)
 
 Bond is the universal name resolver for carbon.io. 
 
@@ -380,7 +380,7 @@ _o('./HelloEndpoint')
 * [For organizing modules](https://github.com/carbon-io/example__hello-world-service-advanced-mongodb/blob/master/lib/HelloService.js#L57-L58)
 * [For connecting to other services](https://github.com/carbon-io/example__hello-world-service-advanced-chaining/blob/master/lib/PublicHelloService.js#L32) 
 
-### (4.3) Fibers (the ```__``` operator) (D)
+### (4.3) Fibers (the ```__``` operator)
 
 Carbon.io uses [Node Fibers](https://github.com/laverdet/node-fibers) under the hood to manage the complexity 
 of Node.js concurrency. *Have you noticed any callbacks in the example code so far?*
@@ -526,7 +526,7 @@ Disadvantages
 ### (4.3.6) Future work (*no pun intended*)
 * Better integration with Promises
 
-## (5) Authentication and access control (D)
+## (5) Authentication and access control
 
 * Authentication is about determining who the user is.
 * Access control is about controlling what the user has permission to do.
@@ -642,7 +642,7 @@ o({
 * [Hello world AAC example](https://github.com/carbon-io/example__hello-world-service-aac)
 
 
-## (6) Collections (D)
+## (6) Collections
 
 Collections are an abstraction on top of ```Endpoints```s that provide a higher-level interface for implemeting
 access to a collection of resources. 
