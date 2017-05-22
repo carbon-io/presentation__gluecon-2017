@@ -28,6 +28,8 @@
 
 ### (3.1) Package structure
 
+The carbon.io package structure is that of a typical Node.js application.
+
 ``` 
 <root>
   |
