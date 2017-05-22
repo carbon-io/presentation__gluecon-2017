@@ -46,6 +46,8 @@ The carbon.io package structure is that of a typical Node.js application.
 
 ### (3.2) Services, Endpoints, and Operations
 
+In carbon.io the top-level application is called a *Service*.
+
 * A Service is a tree of Endpoints
 * Endpoints are a set of Operations (GET, PUT, POST, DELETE, etc...)
 
