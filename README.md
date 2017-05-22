@@ -941,6 +941,7 @@ While we at mLab do, we do not suggest using Carbon.io for production until the 
 
 ## (11) Additional Resources
 
+* https://github.com/carbon-io/presentation__gluecon-2017 (this talk)
 * http://docs.carbon.io
 * https://www.npmjs.com/package/carbon-io
 * http://github.com/carbon-io/carbon-io
