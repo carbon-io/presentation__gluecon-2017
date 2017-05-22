@@ -930,7 +930,7 @@ Example
 $ node lib/HelloService.js gen-static-docs --flavor aglio --out api.html
 ```
 
-* [Example output](https://github.com/carbon-io/example__contacts-api/)
+* [Example output](https://github.com/carbon-io/example__contact-service#generating-api-documentation-aglio-flavor)
 
 ## (9) Should I use carbon.io in production?
 
