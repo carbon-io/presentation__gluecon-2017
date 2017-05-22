@@ -443,7 +443,7 @@ __(function() {
 
 It should also be noted that you must use fibers in all top-level messages in the event loop. Examples:
 * The main program
-* Asycnronous functions (e.g. ```process.nextTick(function() { ... })```)
+* Asynchronous functions (e.g. ```process.nextTick(function() { ... })```)
 * In HTTP middleware to wrap the processing of an HTTP Request
 
 #### (4.3.2) ```.sync```
@@ -646,7 +646,7 @@ o({
 
 ## (6) Collections
 
-Collections are an abstraction on top of ```Endpoints```s that provide a higher-level interface for implemeting
+Collections are an abstraction on top of ```Endpoints```s that provide a higher-level interface for implementing
 access to a collection of resources. 
 
 Common use case:
