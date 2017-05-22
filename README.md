@@ -833,6 +833,7 @@ __(function() {
 
 * Test trees can be arbitrarily deep.
 * Any test node in the tree can be run individually.
+* [Let's play with an example](https://github.com/carbon-io/example__test-suites).
 
 ### (7.3) HttpTests
 
