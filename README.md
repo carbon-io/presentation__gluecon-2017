@@ -450,6 +450,13 @@ It should also be noted that you must use fibers in all top-level messages in th
 
 #### (4.3.2) ```.sync```
 
+The ```.sync``` method can be called to synchronously call an asynchronous function as long as that function takes the standard
+errback function as its last argument. 
+
+* Call by omiting the last errback argument
+* The value will be returned by function 
+* An exception will be thrown if there was an err
+
 There are two forms of ```.sync```:
 
 * ```OBJ.sync.METHOD(ARGS)```
