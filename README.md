@@ -6,9 +6,9 @@
 * Database-as-a-Service for MongoDB that runs on AWS, Azure, and Google Cloud.
 * We host more than half a million MongoDB deployments.
 * Our infrastructure is large and complex, and is made up of dozens of types of microservices.
-* We built carbon.io to allow us to quickly build high-quality microservices.
+* We built Carbon.io to allow us to quickly build high-quality microservices.
 
-## (1) What is carbon.io?
+## (1) What is Carbon.io?
 
 * A Node.js framework for building commandline programs, microservices, and APIs.
 * It is a framework, built on a set of core libraries.
@@ -28,9 +28,9 @@
 
 ### (3.1) Package structure
 
-The carbon.io package structure is that of a typical Node.js application.
+The Carbon.io package structure is that of a typical Node.js application.
 
-``` 
+```
 <root>
   |
   |- package.json
@@ -46,7 +46,7 @@ The carbon.io package structure is that of a typical Node.js application.
 
 ### (3.2) Services, Endpoints, and Operations
 
-In carbon.io the top-level application is called a *Service*.
+In Carbon.io the top-level application is called a *Service*.
 
 * A Service is a tree of Endpoints
 * Endpoints are a set of Operations (GET, PUT, POST, DELETE, etc...)
@@ -74,8 +74,7 @@ Service
 
 ### (3.3) Defining parameters and responses
 
-Operations can be decorated with structure that allows the system to automatically handle certain aspects of managing
-inputs and outputs, and makes the API self-describing. 
+Operations can be decorated with structure that allows the system to automatically handle certain aspects of managing inputs and outputs, and makes the API self-describing.
 
 * Operations can formally define parameters (*query*, *header*, *path*, and *body* parameters).
 * Operations can formally define responses by HTTP status code.
@@ -91,8 +90,7 @@ While one can use Carbon.io with any database technology, Carbon.io makes it par
 
 #### (3.4.1) Connection management
 
-Services centrally manage the MongoDB connection lifecycle for all MongoDB connections needed by the Service, 
-and ensure connection pools are managed properly. 
+Services centrally manage the MongoDB connection lifecycle for all MongoDB connections needed by the Service, and ensure connection pools are managed properly.
 
 Single database connection:
 
@@ -145,7 +143,7 @@ __(function() {
 
 #### (3.4.2) Leafnode
 
-* Part of carbon.io
+* Part of Carbon.io
 * Wrapper around standard Node.js MongoDB driver
 * Supports both asynchronous and synchronous calling styles
 
@@ -164,10 +162,9 @@ Carbon.io makes it very easy to write services that talk to other services.
 
 ## (4) A step back: understanding Carbon's core operators (```o```, ```_o```, and ```__```)
 
-The carbon.io framework is built on top of a set of core libraries that, together, provide carbon.io with 
-much of its power. 
+The Carbon.io framework is built on top of a set of core libraries that, together, provide Carbon.io with much of its power.
 
-You will often see carbon.io modules follow this general pattern:
+You will often see Carbon.io modules follow this general pattern:
 
 ```node
 var carbon = require('carbon-io')
@@ -185,8 +182,8 @@ __(function() {
 })
 ```
 
-The following sections will explain the purpose of: 
-* ```o```: the universal object factory. 
+The following sections will explain the purpose of:
+* ```o```: the universal object factory.
 * ```_o```: the universal name resolver.
 * ```__```: light-weight Node.js "threads" called *Fibers*.
 
@@ -194,7 +191,7 @@ The following sections will explain the purpose of:
 
 Atom is the universal object factory, and used to instantiate objects and to create *components*. Components are simply objects bound in the Node.js module namespace via ```module.exports```.
 
-The easiest way to think about Atom is that it allows you create object literals that also define a *class binding*. 
+The easiest way to think about Atom is that it allows you create object literals that also define a *class binding*.
 
 **Example**
 
@@ -277,11 +274,11 @@ o({
 
 #### (4.1.3) Using Atom to write commandline programs using ```_main``` and ```cmdargs```
 
-```node 
+```node
 var carbon = require('carbon-io')
 var __     = carbon.fibers.__(module)
 var _o     = carbon.bond._o(module)
-var o      = carbon.atom.o(module).main  // Note the .main here since this is the main application 
+var o      = carbon.atom.o(module).main  // Note the .main here since this is the main application
 
 __(function() {
   module.exports = o({
@@ -308,7 +305,7 @@ __(function() {
       property: true // Will result in this.verbose having the value passed at the cmdline
     },
   },
-      
+
   _main: function(options) {
     if (this.verbose) {
       console.log("Here is the input")
@@ -322,20 +319,20 @@ __(function() {
     for (var i = 0; i < numDice; i++) {
       result.push(Math.floor(Math.random() * numSides + 1)) // Random integer between 1 and numSides
     }
-    
+
     console.log(result)
   }
 })
 ```
 
-* Note how we use ```o.main```. 
+* Note how we use ```o.main```.
 
 [Let's see it in action](https://github.com/carbon-io/example__simple-cmdline-app)
 
 #### (4.1.4) ```o.main```
 
 * Special variant of the ```o``` operator.
-* Calls ```_main``` iff ```require.main === module``` (i.e. the module is called as the main module). 
+* Calls ```_main``` iff ```require.main === module``` (i.e. the module is called as the main module).
 * This allows us to create modules that can act both as applications *and* libraries (subtle point -- pretty cool).
    * We will see an example of this with the test framework
 
@@ -347,7 +344,7 @@ __(function() {
 
 ### (4.2) Bond (the ```_o``` operator)
 
-Bond is the universal name resolver for carbon.io. 
+Bond is the universal name resolver for Carbon.io.
 
 #### (4.2.1) Resolving environment variables
 ```node
@@ -356,16 +353,16 @@ _o('env:PORT')
 
 #### (4.2.2) Resolving HTTP URLs
 ```node
-_o('http:localhost:8888')
+_o('http://localhost:8888')
 ```
 
 and using them to perform HTTP requests
 ```node
-_o('http:localhost:8888').get().body
+_o('http://localhost:8888').get().body
 ```
 
 ```node
-_o('http:localhost:8888').getEndpoint('hello').post({ msg: "Hello world!" })
+_o('http://localhost:8888').getEndpoint('hello').post({ msg: "Hello world!" })
 ```
 
 #### (4.2.3) Connecting to MongoDB via a MongoDB URI
@@ -382,11 +379,11 @@ _o('./HelloEndpoint')
 #### In previous examples:
 * [For environment variables](https://github.com/carbon-io/example__hello-world-service-advanced-mongodb/blob/master/lib/HelloService.js#L51)
 * [For organizing modules](https://github.com/carbon-io/example__hello-world-service-advanced-mongodb/blob/master/lib/HelloService.js#L57-L58)
-* [For connecting to other services](https://github.com/carbon-io/example__hello-world-service-advanced-chaining/blob/master/lib/PublicHelloService.js#L32) 
+* [For connecting to other services](https://github.com/carbon-io/example__hello-world-service-advanced-chaining/blob/master/lib/PublicHelloService.js#L32)
 
 ### (4.3) Fibers (the ```__``` operator)
 
-Carbon.io uses [Node Fibers](https://github.com/laverdet/node-fibers) under the hood to manage the complexity 
+Carbon.io uses [Node Fibers](https://github.com/laverdet/node-fibers) under the hood to manage the complexity
 of Node.js concurrency. *Have you noticed any callbacks in the example code so far?*
 
 Fibers allow you to write code that is *logically* synchronous. Consider the following code snippet:
@@ -410,12 +407,12 @@ __(function() {
     console.log(data)
   } catch (err) {
     console.log(err)
-  } 
+  }
 })
 ```
 
 * The ```readFile``` function blocks the fiber (yields) until data is returned.
-* If an error occurs it is thown as an exception (with a useful stacktrace). This is huge. 
+* If an error occurs it is thown as an exception (with a useful stacktrace). This is huge.
 
 #### (4.3.1) ```__```
 
@@ -440,8 +437,8 @@ __(function() {
 
 **Behavior**
 * Code inside of a spwaned fiber runs asynchronous to the code that spawned the fiber
-* If a callback is supplied, the return value from the function (or exception if thrown) is passed to the callback. 
-* From within the fiber ```.sync``` can be called to synchronously call functions (without *actually* blocking). 
+* If a callback is supplied, the return value from the function (or exception if thrown) is passed to the callback.
+* From within the fiber ```.sync``` can be called to synchronously call functions (without *actually* blocking).
 
 It should also be noted that you must use fibers in all top-level messages in the event loop. Examples:
 * The main program
@@ -450,11 +447,10 @@ It should also be noted that you must use fibers in all top-level messages in th
 
 #### (4.3.2) ```.sync```
 
-The ```.sync``` method can be called to synchronously call an asynchronous function as long as that function takes the standard
-errback function as its last argument. 
+The ```.sync``` method can be called to synchronously call an asynchronous function as long as that function takes the standard errback function as its last argument.
 
 * Call by omiting the last errback argument
-* The value will be returned by function 
+* The value will be returned by function
 * An exception will be thrown if there was an err
 
 There are two forms of ```.sync```:
@@ -473,7 +469,7 @@ Example
 fs.readFile.sync("foo.txt")
 ```
 
-Best practice: The first form should be used if there is a receiver, and the second on plain functions. 
+Best practice: The first form should be used if there is a receiver, and the second on plain functions.
 
 #### (4.3.3) Creating synchronous wrappers
 
@@ -492,11 +488,9 @@ There are two variants of the ```___``` operator, ```ensure``` and ```spawn```.
 * ```__.ensure```: Only spawns a new fiber if not already executing within a fiber (**default**).
 * ```__.spawn```: Always spawns a new fiber.
 
-Using ```__.ensure``` is particularly useful as top-level wrappers for applications that you also want to be able 
-to use as components / libraries.
+Using ```__.ensure``` is particularly useful as top-level wrappers for applications that you also want to be able to use as components / libraries.
 
-A great example of this are unit tests that you might want to both be part of a larger test suite as well as runnable
-standalone. 
+A great example of this are unit tests that you might want to both be part of a larger test suite as well as runnable standalone.
 
 ```node
 var carbon = require('carbon-io')
@@ -511,7 +505,7 @@ __(function() {
     }
     tests: [
       _o('./SubTest1'),
-      _o('./SubTest2'),    
+      _o('./SubTest2'),
     ]
   })
 })
@@ -558,8 +552,7 @@ o({
 })
 ```
 
-When configured on a Service the authenticator will authenticate all requests and expose the 
-authenticated user via ```req.user``` in all endpoint operations.
+When configured on a Service the authenticator will authenticate all requests and expose the authenticated user via ```req.user``` in all endpoint operations.
 
 #### (5.1.2) Built-in Authenticators
 
@@ -597,8 +590,7 @@ o({
 
 ### (5.2) Access control
 
-Endpoints can configure an Access Control List (ACL) to govern which users can perform each HTTP
-operation (e.g. GET, PUT, POST, etc.) on that Endpoint.
+Endpoints can configure an Access Control List (ACL) to govern which users can perform each HTTP operation (e.g. GET, PUT, POST, etc.) on that Endpoint.
 
 ```node
 o({
@@ -643,7 +635,7 @@ o({
       return { msg: "Hello World!" }
     },
     post: function(req) {
-      return { msg: `Hello ${req.body}!` } 
+      return { msg: `Hello ${req.body}!` }
     }
   })
 })
@@ -655,8 +647,7 @@ o({
 
 ## (6) Collections
 
-Collections are an abstraction on top of ```Endpoints```s that provide a higher-level interface for implementing
-access to a collection of resources. 
+Collections are an abstraction on top of ```Endpoints```s that provide a higher-level interface for implementing access to a collection of resources.
 
 Common use case:
 ```
@@ -669,8 +660,7 @@ DELETE /users/123  // Remove User with _id of 123
 
 ### (6.1) The Collection interface
 
-When implementing a ```Collection```, instead of implementing the low-level HTTP methods 
-(```get```, ```post```, ```delete```, etc...), you implement the following higher-level interface:
+When implementing a ```Collection```, instead of implementing the low-level HTTP methods (```get```, ```post```, ```delete```, etc...), you implement the following higher-level interface:
 
 * ```insert(obj, reqCtx)```
 * ```find(query, reqCtx)```
@@ -696,7 +686,7 @@ Which results in the following tree of ```Endpoint```s and ```Operation```s:
 
 ### (6.2) MongoDBCollection
 
-The ```MongoDBCollection``` class is a ```Collection``` that is backed by a MongoDB database collection. 
+The ```MongoDBCollection``` class is a ```Collection``` that is backed by a MongoDB database collection.
 
 ```node
 __(function() {
@@ -746,7 +736,7 @@ Let's look at a more elaborate example:
 
 ## (7) Testing with Test-tube
 
-Carbon.io comes with a testing library called Test-tube. 
+Carbon.io comes with a testing library called Test-tube.
 
 ### (7.1) Basic test structure
 
@@ -774,7 +764,7 @@ __(function() {
 })
 ```
 
-Test implementations (as well as ```setup``` and ```teardown```) can be synchronous or asynchronous. 
+Test implementations (as well as ```setup``` and ```teardown```) can be synchronous or asynchronous.
 
 Synchronous
 ```node
@@ -817,8 +807,7 @@ __(function() {
 
 ### (7.2) Test suites
 
-Since all ```Test``` objects can have an array of child / sub-tests, Tests are trees. This makes
-it easy to manage large test suites.
+Since all ```Test``` objects can have an array of child / sub-tests, Tests are trees. This makes it easy to manage large test suites.
 
 ```node
 var __ = require('@carbon-io/carbon-core').fibers.__(module)
@@ -846,7 +835,7 @@ __(function() {
 
 ### (7.3) HttpTests
 
-Test-tube makes it particularly easy to write HTTP-based tests. 
+Test-tube makes it particularly easy to write HTTP-based tests.
 
 ```node
 __(function() {
@@ -873,8 +862,7 @@ __(function() {
 
 ### (7.4) ServiceTests
 
-The ```ServiceTest``` class is an extension of ```HttpTest``` that makes it easy to have the test start and stop your ```Service``` 
-as part of the test process. 
+The ```ServiceTest``` class is an extension of ```HttpTest``` that makes it easy to have the test start and stop your ```Service``` as part of the test process.
 
 ```node
 __(function() {
@@ -912,7 +900,7 @@ $ node test/HelloServiceTest
 
 ## (8) Generating API documentation for your Services
 
-Each ```Service``` is capable of generating its own docs. 
+Each ```Service``` is capable of generating its own docs.
 
 Flavors:
 * Github Flavored Markdown
@@ -932,7 +920,7 @@ Options:
    --show-options                        show generator specific options
 
 generate docs for the api
-Environment variables: 
+Environment variables:
   <none>
 
 ```
@@ -944,9 +932,9 @@ $ node lib/HelloService.js gen-static-docs --flavor aglio --out api.html
 
 * [Example output](https://github.com/carbon-io/example__contact-service#generating-api-documentation-aglio-flavor)
 
-## (9) Should I use carbon.io in production?
+## (9) Should I use Carbon.io in production?
 
-While we at mLab do, we do not suggest using Carbon.io for production until the 1.0 release. 
+While we at mLab do, we do not suggest using Carbon.io for production until the 1.0 release.
 
 ## (10) Questions?
 
@@ -958,8 +946,3 @@ While we at mLab do, we do not suggest using Carbon.io for production until the 
 * https://www.npmjs.com/package/carbon-io
 * http://github.com/carbon-io/carbon-io
 * will@mlab.com
-
-
-
-
-
