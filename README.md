@@ -356,16 +356,16 @@ _o('env:PORT')
 
 #### (4.2.2) Resolving HTTP URLs
 ```node
-_o('http:localhost:8888')
+_o('http://localhost:8888')
 ```
 
 and using them to perform HTTP requests
 ```node
-_o('http:localhost:8888').get().body
+_o('http://localhost:8888').get().body
 ```
 
 ```node
-_o('http:localhost:8888').getEndpoint('hello').post({ msg: "Hello world!" })
+_o('http://localhost:8888').getEndpoint('hello').post({ msg: "Hello world!" })
 ```
 
 #### (4.2.3) Connecting to MongoDB via a MongoDB URI
