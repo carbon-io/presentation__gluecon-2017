@@ -6,9 +6,9 @@
 * Database-as-a-Service for MongoDB that runs on AWS, Azure, and Google Cloud.
 * We host more than half a million MongoDB deployments.
 * Our infrastructure is large and complex, and is made up of dozens of types of microservices.
-* We built carbon.io to allow us to quickly build high-quality microservices.
+* We built Carbon.io to allow us to quickly build high-quality microservices.
 
-## (1) What is carbon.io?
+## (1) What is Carbon.io?
 
 * A Node.js framework for building commandline programs, microservices, and APIs.
 * It is a framework, built on a set of core libraries.
@@ -28,7 +28,7 @@
 
 ### (3.1) Package structure
 
-The carbon.io package structure is that of a typical Node.js application.
+The Carbon.io package structure is that of a typical Node.js application.
 
 ```
 <root>
@@ -46,7 +46,7 @@ The carbon.io package structure is that of a typical Node.js application.
 
 ### (3.2) Services, Endpoints, and Operations
 
-In carbon.io the top-level application is called a *Service*.
+In Carbon.io the top-level application is called a *Service*.
 
 * A Service is a tree of Endpoints
 * Endpoints are a set of Operations (GET, PUT, POST, DELETE, etc...)
@@ -143,7 +143,7 @@ __(function() {
 
 #### (3.4.2) Leafnode
 
-* Part of carbon.io
+* Part of Carbon.io
 * Wrapper around standard Node.js MongoDB driver
 * Supports both asynchronous and synchronous calling styles
 
@@ -162,9 +162,9 @@ Carbon.io makes it very easy to write services that talk to other services.
 
 ## (4) A step back: understanding Carbon's core operators (```o```, ```_o```, and ```__```)
 
-The carbon.io framework is built on top of a set of core libraries that, together, provide carbon.io with much of its power.
+The Carbon.io framework is built on top of a set of core libraries that, together, provide Carbon.io with much of its power.
 
-You will often see carbon.io modules follow this general pattern:
+You will often see Carbon.io modules follow this general pattern:
 
 ```node
 var carbon = require('carbon-io')
@@ -344,7 +344,7 @@ __(function() {
 
 ### (4.2) Bond (the ```_o``` operator)
 
-Bond is the universal name resolver for carbon.io.
+Bond is the universal name resolver for Carbon.io.
 
 #### (4.2.1) Resolving environment variables
 ```node
@@ -932,7 +932,7 @@ $ node lib/HelloService.js gen-static-docs --flavor aglio --out api.html
 
 * [Example output](https://github.com/carbon-io/example__contact-service#generating-api-documentation-aglio-flavor)
 
-## (9) Should I use carbon.io in production?
+## (9) Should I use Carbon.io in production?
 
 While we at mLab do, we do not suggest using Carbon.io for production until the 1.0 release.
 
