@@ -74,8 +74,7 @@ Service
 
 ### (3.3) Defining parameters and responses
 
-Operations can be decorated with structure that allows the system to automatically handle certain aspects of managing
-inputs and outputs, and makes the API self-describing.
+Operations can be decorated with structure that allows the system to automatically handle certain aspects of managing inputs and outputs, and makes the API self-describing.
 
 * Operations can formally define parameters (*query*, *header*, *path*, and *body* parameters).
 * Operations can formally define responses by HTTP status code.
@@ -91,8 +90,7 @@ While one can use Carbon.io with any database technology, Carbon.io makes it par
 
 #### (3.4.1) Connection management
 
-Services centrally manage the MongoDB connection lifecycle for all MongoDB connections needed by the Service,
-and ensure connection pools are managed properly.
+Services centrally manage the MongoDB connection lifecycle for all MongoDB connections needed by the Service, and ensure connection pools are managed properly.
 
 Single database connection:
 
@@ -164,8 +162,7 @@ Carbon.io makes it very easy to write services that talk to other services.
 
 ## (4) A step back: understanding Carbon's core operators (```o```, ```_o```, and ```__```)
 
-The carbon.io framework is built on top of a set of core libraries that, together, provide carbon.io with
-much of its power.
+The carbon.io framework is built on top of a set of core libraries that, together, provide carbon.io with much of its power.
 
 You will often see carbon.io modules follow this general pattern:
 
@@ -450,8 +447,7 @@ It should also be noted that you must use fibers in all top-level messages in th
 
 #### (4.3.2) ```.sync```
 
-The ```.sync``` method can be called to synchronously call an asynchronous function as long as that function takes the standard
-errback function as its last argument.
+The ```.sync``` method can be called to synchronously call an asynchronous function as long as that function takes the standard errback function as its last argument.
 
 * Call by omiting the last errback argument
 * The value will be returned by function
@@ -492,11 +488,9 @@ There are two variants of the ```___``` operator, ```ensure``` and ```spawn```.
 * ```__.ensure```: Only spawns a new fiber if not already executing within a fiber (**default**).
 * ```__.spawn```: Always spawns a new fiber.
 
-Using ```__.ensure``` is particularly useful as top-level wrappers for applications that you also want to be able
-to use as components / libraries.
+Using ```__.ensure``` is particularly useful as top-level wrappers for applications that you also want to be able to use as components / libraries.
 
-A great example of this are unit tests that you might want to both be part of a larger test suite as well as runnable
-standalone.
+A great example of this are unit tests that you might want to both be part of a larger test suite as well as runnable standalone.
 
 ```node
 var carbon = require('carbon-io')
@@ -558,8 +552,7 @@ o({
 })
 ```
 
-When configured on a Service the authenticator will authenticate all requests and expose the
-authenticated user via ```req.user``` in all endpoint operations.
+When configured on a Service the authenticator will authenticate all requests and expose the authenticated user via ```req.user``` in all endpoint operations.
 
 #### (5.1.2) Built-in Authenticators
 
@@ -597,8 +590,7 @@ o({
 
 ### (5.2) Access control
 
-Endpoints can configure an Access Control List (ACL) to govern which users can perform each HTTP
-operation (e.g. GET, PUT, POST, etc.) on that Endpoint.
+Endpoints can configure an Access Control List (ACL) to govern which users can perform each HTTP operation (e.g. GET, PUT, POST, etc.) on that Endpoint.
 
 ```node
 o({
@@ -655,8 +647,7 @@ o({
 
 ## (6) Collections
 
-Collections are an abstraction on top of ```Endpoints```s that provide a higher-level interface for implementing
-access to a collection of resources.
+Collections are an abstraction on top of ```Endpoints```s that provide a higher-level interface for implementing access to a collection of resources.
 
 Common use case:
 ```
@@ -669,8 +660,7 @@ DELETE /users/123  // Remove User with _id of 123
 
 ### (6.1) The Collection interface
 
-When implementing a ```Collection```, instead of implementing the low-level HTTP methods
-(```get```, ```post```, ```delete```, etc...), you implement the following higher-level interface:
+When implementing a ```Collection```, instead of implementing the low-level HTTP methods (```get```, ```post```, ```delete```, etc...), you implement the following higher-level interface:
 
 * ```insert(obj, reqCtx)```
 * ```find(query, reqCtx)```
@@ -817,8 +807,7 @@ __(function() {
 
 ### (7.2) Test suites
 
-Since all ```Test``` objects can have an array of child / sub-tests, Tests are trees. This makes
-it easy to manage large test suites.
+Since all ```Test``` objects can have an array of child / sub-tests, Tests are trees. This makes it easy to manage large test suites.
 
 ```node
 var __ = require('@carbon-io/carbon-core').fibers.__(module)
@@ -873,8 +862,7 @@ __(function() {
 
 ### (7.4) ServiceTests
 
-The ```ServiceTest``` class is an extension of ```HttpTest``` that makes it easy to have the test start and stop your ```Service```
-as part of the test process.
+The ```ServiceTest``` class is an extension of ```HttpTest``` that makes it easy to have the test start and stop your ```Service``` as part of the test process.
 
 ```node
 __(function() {
