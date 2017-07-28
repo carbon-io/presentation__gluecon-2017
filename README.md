@@ -70,7 +70,7 @@ Service
   |-- Endpoint_N
 ```
 
-* Let's take a look at a real example: [Hello world example](https://github.com/carbon-io/example__hello-world-service)
+* Let's take a look at a real example: [Hello world example](https://github.com/carbon-io-guides/example__hello-world-service)
 
 ### (3.3) Defining parameters and responses
 
@@ -83,7 +83,7 @@ inputs and outputs, and makes the API self-describing.
 * This is useful for:
   * Automatic validation of input parameters and response output
   * Generating API documentation
-* Let's take a look: [Hello world (parameter parsing) example](https://github.com/carbon-io/example__hello-world-service-parameter-parsing).
+* Let's take a look: [Hello world (parameter parsing) example](https://github.com/carbon-io-guides/example__hello-world-service-parameter-parsing).
 
 ### (3.4) Working with MongoDB
 
@@ -153,14 +153,14 @@ __(function() {
 
 Let's take a look at a real example that uses MongoDB and that illustrates a few other advanced features:
 
-* [Hello world (mongodb)](https://github.com/carbon-io/example__hello-world-service-mongodb)
+* [Hello world (mongodb)](https://github.com/-guides/example__hello-world-service-mongodb)
 
 
 ### (3.5) Working with other services
 
 Carbon.io makes it very easy to write services that talk to other services.
 
-* Let's  take a look: [Hello world (chaining)](https://github.com/carbon-io/example__hello-world-service-chaining)
+* Let's  take a look: [Hello world (chaining)](https://github.com/carbon-io-guides/example__hello-world-service-chaining)
 
 ## (4) A step back: understanding Carbon's core operators (```o```, ```_o```, and ```__```)
 
@@ -330,7 +330,7 @@ __(function() {
 
 * Note how we use ```o.main```. 
 
-[Let's see it in action](https://github.com/carbon-io/example__simple-cmdline-app)
+[Let's see it in action](https://github.com/carbon-io-guides/example__simple-cmdline-app)
 
 #### (4.1.4) ```o.main```
 
@@ -380,9 +380,9 @@ _o('./HelloEndpoint')
 ```
 
 #### In previous examples:
-* [For environment variables](https://github.com/carbon-io/example__hello-world-service-advanced-mongodb/blob/master/lib/HelloService.js#L51)
-* [For organizing modules](https://github.com/carbon-io/example__hello-world-service-advanced-mongodb/blob/master/lib/HelloService.js#L57-L58)
-* [For connecting to other services](https://github.com/carbon-io/example__hello-world-service-advanced-chaining/blob/master/lib/PublicHelloService.js#L32) 
+* [For environment variables](https://github.com/carbon-io-guides/example__hello-world-service-advanced-mongodb/blob/master/lib/HelloService.js#L51)
+* [For organizing modules](https://github.com/carbon-io-guides/example__hello-world-service-advanced-mongodb/blob/master/lib/HelloService.js#L57-L58)
+* [For connecting to other services](https://github.com/carbon-io-guides/example__hello-world-service-advanced-chaining/blob/master/lib/PublicHelloService.js#L32) 
 
 ### (4.3) Fibers (the ```__``` operator)
 
@@ -519,8 +519,8 @@ __(function() {
 
 ### (4.3.5) Revisiting our examples
 
-* [Hello world (mongodb)](https://github.com/carbon-io/example__hello-world-service-mongodb/blob/master/lib/HelloEndpoint.js#L50)
-* [Hello world (chaining)](https://github.com/carbon-io/example__hello-world-service-chaining/blob/master/lib/PublicHelloService.js#L58)
+* [Hello world (mongodb)](https://github.com/carbon-io-guides/example__hello-world-service-mongodb/blob/master/lib/HelloEndpoint.js#L50)
+* [Hello world (chaining)](https://github.com/carbon-io-guides/example__hello-world-service-chaining/blob/master/lib/PublicHelloService.js#L58)
 
 ### (4.3.6) Advantages and disadvantages
 
@@ -650,7 +650,7 @@ o({
 ```
 
 ### (5.2) Putting it all together
-* [Hello world AAC example](https://github.com/carbon-io/example__hello-world-service-aac)
+* [Hello world AAC example](https://github.com/carbon-io-guides/example__hello-world-service-aac)
 
 
 ## (6) Collections
@@ -715,7 +715,7 @@ __(function() {
 ```
 
 Let's look at a more elaborate example:
-* [Zipcode service]( https://github.com/carbon-io/example__zipcode-service)
+* [Zipcode service]( https://github.com/carbon-io-guides/example__zipcode-service)
 
 ### (6.3) Custom Collections
 
@@ -742,7 +742,7 @@ __(function() {
 ```
 
 Let's look at a more elaborate example:
-* [Contact service](https://github.com/carbon-io/example__contact-service)
+* [Contact service](https://github.com/carbon-io-guides/example__contact-service)
 
 ## (7) Testing with Test-tube
 
@@ -842,7 +842,7 @@ __(function() {
 
 * Test trees can be arbitrarily deep.
 * Any test node in the tree can be run individually.
-* [Let's play with an example](https://github.com/carbon-io/example__test-suites).
+* [Let's play with an example](https://github.com/carbon-io-guides/example__test-suites).
 
 ### (7.3) HttpTests
 
@@ -942,7 +942,7 @@ Example
 $ node lib/HelloService.js gen-static-docs --flavor aglio --out api.html
 ```
 
-* [Example output](https://github.com/carbon-io/example__contact-service#generating-api-documentation-aglio-flavor)
+* [Example output](https://github.com/carbon-io-guides/example__contact-service#generating-api-documentation-aglio-flavor)
 
 ## (9) Should I use carbon.io in production?
 
@@ -954,9 +954,10 @@ While we at mLab do, we do not suggest using Carbon.io for production until the 
 ## (11) Additional Resources
 
 * https://github.com/carbon-io/presentation__gluecon-2017 (this talk)
-* http://docs.carbon.io
+* https://docs.carbon.io
 * https://www.npmjs.com/package/carbon-io
-* http://github.com/carbon-io/carbon-io
+* https://github.com/carbon-io/carbon-io
+* https://github.com/carbon-io-guides
 * will@mlab.com
 
 
