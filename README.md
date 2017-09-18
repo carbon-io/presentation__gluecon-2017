@@ -6,9 +6,9 @@
 * Database-as-a-Service for MongoDB that runs on AWS, Azure, and Google Cloud.
 * We host more than half a million MongoDB deployments.
 * Our infrastructure is large and complex, and is made up of dozens of types of microservices.
-* We built carbon.io to allow us to quickly build high-quality microservices.
+* We built Carbon.io to allow us to quickly build high-quality microservices.
 
-## (1) What is carbon.io?
+## (1) What is Carbon.io?
 
 * A Node.js framework for building commandline programs, microservices, and APIs.
 * It is a framework, built on a set of core libraries.
@@ -28,7 +28,7 @@
 
 ### (3.1) Package structure
 
-The carbon.io package structure is that of a typical Node.js application.
+The Carbon.io package structure is that of a typical Node.js application.
 
 ``` 
 <root>
@@ -145,7 +145,7 @@ __(function() {
 
 #### (3.4.2) Leafnode
 
-* Part of carbon.io
+* Part of Carbon.io
 * Wrapper around standard Node.js MongoDB driver
 * Supports both asynchronous and synchronous calling styles
 
@@ -164,10 +164,10 @@ Carbon.io makes it very easy to write services that talk to other services.
 
 ## (4) A step back: understanding Carbon's core operators (```o```, ```_o```, and ```__```)
 
-The carbon.io framework is built on top of a set of core libraries that, together, provide carbon.io with 
+The Carbon.io framework is built on top of a set of core libraries that, together, provide Carbon.io with 
 much of its power. 
 
-You will often see carbon.io modules follow this general pattern:
+You will often see Carbon.io modules follow this general pattern:
 
 ```node
 var carbon = require('carbon-io')
