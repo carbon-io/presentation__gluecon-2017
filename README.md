@@ -341,7 +341,7 @@ __(function() {
 
 #### (4.1.5) Advantages of using Atom:
 
-* Provide for a form of light weight depedency injection (a.k.a. DI).
+* Provide for a form of light weight dependency injection (a.k.a. DI).
 * Provides for a generic form of application configuration.
 * Declarative style ("what not how") via  "datastructure DSLs".
 
