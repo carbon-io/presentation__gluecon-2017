@@ -655,7 +655,7 @@ o({
 
 ## (6) Collections
 
-Collections are an abstraction on top of ```Endpoints```s that provide a higher-level interface for implementing
+Collections are an abstraction on top of ```Endpoint```s that provide a higher-level interface for implementing
 access to a collection of resources. 
 
 Common use case:
