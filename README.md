@@ -975,6 +975,6 @@ While we at mLab do, we do not suggest using Carbon.io for production until the 
 [10]: https://github.com/carbon-io-examples/example__hello-world-service-chaining/tree/carbon-0.6/lib/PublicHelloService.js#L58
 [11]: https://github.com/carbon-io-examples/example__hello-world-service-aac/tree/carbon-0.6
 [12]: https://github.com/carbon-io-examples/example__zipcode-service/tree/carbon-0.6
-[13]: https://github.com/carbon-io-examples/example__contact-service/tree/carbon-0.6
+[13]: https://github.com/carbon-io-examples/contacts-service-advanced/tree/carbon-0.6
 [14]: https://github.com/carbon-io-examples/example__test-suites/tree/carbon-0.6
-[15]: https://github.com/carbon-io-examples/example__contact-service/tree/carbon-0.6#generating-api-documentation-aglio-flavor
+[15]: https://github.com/carbon-io-examples/contacts-service-advanced/tree/carbon-0.6#generating-api-documentation-aglio-flavor
